@@ -7,6 +7,7 @@ const initialState = {
 }
 export default function UserReducers(state = initialState, action) {
     switch (action.type) {
+
         case 'USER_GET_SUCCESS':
             return {
                 ...state,
@@ -16,34 +17,6 @@ export default function UserReducers(state = initialState, action) {
                 userList: action.data,
             }
         case 'USER_GET_FAILURE':
-            return {
-                ...state,
-                isInprogress: false,
-                isError: true,
-                message: action.messsage,
-            }
-        case 'USER_SUCCESS':
-            return {
-                ...state,
-                isInprogress: true,
-                isError: false,
-                message: action.messsage,
-            }
-        case 'USER_FAILURE':
-            return {
-                ...state,
-                isInprogress: false,
-                isError: true,
-                message: action.messsage,
-            }
-        case 'USERUPDATE_SUCCESS':
-            return {
-                ...state,
-                isInprogress: true,
-                isError: false,
-                message: action.messsage,
-            }
-        case 'USERUPDATE_FAILURE':
             return {
                 ...state,
                 isInprogress: false,

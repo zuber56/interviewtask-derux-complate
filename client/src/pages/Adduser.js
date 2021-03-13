@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Field, Formik, ErrorMessage } from "formik";
 import { Link, withRouter, useHistory, useLocation } from "react-router-dom";
-import { addUser, userUpdate } from '../store/actions/adduser';
+import { addUser, userUpdate } from '../store/      /adduser';
 import * as Yup from "yup";
 import { connect } from 'react-redux';
 
-
 const Adduser = (props) => {
+
     const history = useHistory();
     const [role, setrole] = useState('');
 
@@ -203,7 +203,6 @@ const Adduser = (props) => {
                         />
                     </div>
                     :
-
                     <div
                         className="container login-fix"
                         style={{ width: "500px", marginTop: "200px" }}
@@ -247,7 +246,7 @@ const Adduser = (props) => {
                                                 className="container"
                                             >
                                                 User Information
-                  </h3>
+                                             </h3>
                                             <br />
                                             <Field
                                                 name="first_name"
@@ -329,7 +328,7 @@ const Adduser = (props) => {
                                                 style={{ width: "400px", marginLeft: "30px" }}
                                             >
                                                 Add user
-                  </button>
+                                        </button>
                                             <br />
                                             <br />
                                             <br />
@@ -364,6 +363,5 @@ function mapDispatchToProps(dispatch) {
         userUpdate: (id, data, history) => dispatch(userUpdate(id, data, history)),
     };
 }
-
 export default withRouter(connect(null, mapDispatchToProps)(Adduser));
 

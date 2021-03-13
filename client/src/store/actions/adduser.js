@@ -1,9 +1,9 @@
 import axios from "axios";
 
-
 export function addUser(data, history) {
     //console.log("datadtatddtatdta:",data);
     return (dispatch) => {
+        console.log("adduser=>", history)
         return axios
             .post(`${process.env.REACT_APP_NODE_API}/adduser`, data, {
                 headers: { "Content-Type": "application/json" },
@@ -25,9 +25,8 @@ export function addUser(data, history) {
             });
     };
 }
-
 export function userUpdate(id, data, history) {
-    //console.log("userUpdate=>>",id, data)
+    console.log("userUpdate=>>", id, data, history)
     return (dispatch) => {
         return axios
             .patch(`${process.env.REACT_APP_NODE_API}/updateuser/${id}`, data, {
